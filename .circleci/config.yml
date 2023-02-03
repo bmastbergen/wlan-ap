@@ -14,8 +14,9 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run: sudo apt install build-essential libncurses5-dev gawk git libssl-dev gettext zlib1g-dev swig unzip time rsync python3 python3-setuptools python3-yaml
-      - run: python3 ./setup.py --setup
+      - run: sudo apt-get update 
+      - run: sudo apt-get install build-essential libncurses5-dev gawk git libssl-dev gettext zlib1g-dev swig unzip time rsync python3 python3-setuptools python3-yaml
+      - run: ./setup.py --setup
       - run: cd openwrt
       - run: ./scripts/gen_config x64_vm 
 
