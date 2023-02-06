@@ -19,6 +19,8 @@ jobs:
       - run: pip3 install pyyaml
       - run: ./setup.py --setup
       - run: cd openwrt && ./scripts/gen_config.py x64_vm 
+      - run: cd openwrt && make download -j$(nproc)
+      - run: cd openwrt && make -j$(nproc)
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
