@@ -21,7 +21,7 @@ jobs:
       - run: cd openwrt && ./scripts/gen_config.py x64_vm 
       - run: cd openwrt && make download -j$(nproc)
       - run:
-            no_output_timeout: 30m
+            no_output_timeout: 120m
             command: cd openwrt && make -j$(nproc)
 
 
